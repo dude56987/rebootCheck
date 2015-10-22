@@ -5,13 +5,13 @@ if echo $check | grep -c "www.";then
 	if ping -c 1 $check;then
 		echo 'Still connected :D'
 	else
-		reboot
+		/sbin/reboot
 	fi
 else
 	# if file path exists then remove the file and reboot
 	if [ -f $check ];then
 		rm $check
-		reboot
+		/sbin/reboot
 	else
 		echo 'File flag does not exist ^_^'
 	fi
